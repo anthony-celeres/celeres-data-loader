@@ -1,0 +1,83 @@
+[build-system]
+requires = ["scikit-build-core>=0.10"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "cdl"
+version = "0.1.0"
+description = "Celeres Data Loader — Constant-memory shuffling for I/O-efficient deep learning."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "CDL Authors"},
+]
+keywords = [
+    "deep-learning", "data-loading", "shuffling", "feistel",
+    "pytorch", "machine-learning", "io-efficiency",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.20",
+]
+
+[project.optional-dependencies]
+hdf5 = ["h5py>=3.0"]
+torch = ["torch>=1.9"]
+image = ["Pillow>=8.0"]
+parquet = ["pyarrow>=6.0"]
+all = ["h5py>=3.0", "torch>=1.9", "Pillow>=8.0", "pyarrow>=6.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.3",
+    "mypy>=1.0",
+    "pybind11>=2.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/CDL-project/CDL"
+Documentation = "https://github.com/CDL-project/CDL#readme"
+Repository = "https://github.com/CDL-project/CDL"
+Issues = "https://github.com/CDL-project/CDL/issues"
+
+[tool.scikit-build]
+sdist.exclude = [
+    ".github",
+    "tests/cpp",
+    "build*",
+    "out*",
+]
+wheel.packages = ["src/cdl"]
+cmake.args = ["-DCDL_BUILD_PYTHON=ON"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
