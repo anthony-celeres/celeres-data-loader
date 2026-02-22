@@ -1,10 +1,10 @@
-# CDL — Celeres Data Loader
+# CDL - Celeres Data Loader
 
-**Constant-memory shuffling and I/O-efficient data loading for deep learning.**
+**A Parallel Data Loading System with Constant-Memory Shuffling for Scalable Deep Learning Training**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![PyPI](https://img.shields.io/badge/pypi-cdl-orange.svg)]()
+[![PyPI](https://img.shields.io/badge/pypi-celeres--dl-orange.svg)](https://pypi.org/project/celeres-dl/)
 
 ---
 
@@ -49,7 +49,7 @@ while items are still **fully shuffled** across the epoch.
 ### Install
 
 ```bash
-pip install cdl
+pip install celeres-dl
 ```
 
 ### As a PyTorch Sampler (drop-in replacement)

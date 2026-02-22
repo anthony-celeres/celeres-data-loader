@@ -3,18 +3,21 @@ requires = ["scikit-build-core>=0.10", "pybind11>=2.11"]
 build-backend = "scikit_build_core.build"
 
 [project]
-name = "cdl"
+name = "celeres-dl"
 version = "0.1.0"
-description = "Celeres Data Loader — Constant-memory shuffling for I/O-efficient deep learning."
+description = "Celeres Data Loader — A Parallel Data Loading System with Constant-Memory Shuffling for Scalable Deep Learning Training."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
 authors = [
-    {name = "CDL Authors"},
+    {name = "Nimbus"},
 ]
 keywords = [
     "deep-learning", "data-loading", "shuffling", "feistel",
-    "pytorch", "machine-learning", "io-efficiency",
+    "pytorch", "machine-learning", "io-efficiency", "parallel-data-loading",
+    "scalable-deep-learning", "constant-memory-shuffling",
+    "data-pipeline", "distributed-training", "data-shuffling",
+    "data-preprocessing", "data-augmentation",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -30,7 +33,11 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Distributed Computing",
 ]
 dependencies = [
     "numpy>=1.20",

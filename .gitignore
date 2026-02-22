@@ -32,3 +32,6 @@ Thumbs.db
 *.so
 *.pyd
 *.dll
+
+# AI Assistant
+.agent/
